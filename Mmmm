@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía de Inicio Rápido 2026</title>
+  <style>
+    :root{
+      --ink:#111827;
+      --muted:#4b5563;
+      --soft:#6b7280;
+      --line:#e5e7eb;
+      --paper:#ffffff;
+      --bg:#f5f3ef;
+      --accent:#b08d2f;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height:1.78;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .page{
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 22px 56px;
+    }
+
+    .sheet{
+      background: var(--paper);
+      border: 1px solid rgba(17,24,39,.06);
+      box-shadow: 0 14px 36px rgba(15,23,42,.07);
+      border-radius: 0;
+      overflow: hidden;
+    }
+
+    .title-page{
+      min-height: 680px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding: 60px 40px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .title-wrap{
+      max-width: 760px;
+    }
+
+    .eyebrow{
+      margin:0 0 14px;
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      font-size:12px;
+      color:var(--soft);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h1{
+      margin:0;
+      font-size: clamp(38px, 5.8vw, 66px);
+      line-height:0.98;
+      letter-spacing:-0.05em;
+      text-wrap:balance;
+    }
+
+    .subtitle{
+      margin:18px auto 0;
+      max-width: 720px;
+      font-size: 20px;
+      line-height:1.6;
+      color:var(--muted);
+    }
+
+    .meta{
+      margin-top:20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:13px;
+      color:var(--soft);
+      letter-spacing:.04em;
+    }
+
+    .content{
+      padding: 44px 56px 54px;
+    }
+
+    .front-matter{
+      border-bottom:1px solid var(--line);
+      padding-bottom: 22px;
+      margin-bottom: 30px;
+    }
+
+    .small{
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-size:11px;
+      color:var(--soft);
+      margin-bottom:10px;
+    }
+
+    .front-matter p{
+      margin:6px 0;
+      font-size:15px;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    h2{
+      font-size: 26px;
+      line-height:1.2;
+      margin: 34px 0 14px;
+      color: var(--ink);
+      letter-spacing:-0.03em;
+    }
+
+    h3{
+      font-size: 19px;
+      line-height:1.3;
+      margin: 24px 0 10px;
+      color: var(--ink);
+    }
+
+    p{
+      margin: 12px 0;
+      font-size: 17px;
+      color: var(--ink);
+    }
+
+    .lead{
+      font-size: 18px;
+      color:#1f2937;
+    }
+
+    .toc{
+      margin: 8px 0 0;
+      padding-top: 12px;
+      border-top:1px solid var(--line);
+    }
+
+    .toc h2{
+      margin-top:0;
+      margin-bottom:10px;
+      font-size:24px;
+    }
+
+    .toc ol{
+      margin:0;
+      padding-left: 22px;
+    }
+
+    .toc li{
+      margin: 8px 0;
+      font-size:16px;
+      color:#374151;
+    }
+
+    ul, ol{
+      margin: 12px 0 12px 26px;
+      padding:0;
+    }
+
+    li{
+      margin: 8px 0;
+      font-size: 17px;
+      line-height:1.72;
+    }
+
+    .rule{
+      margin: 28px 0;
+      height:1px;
+      background: linear-gradient(90deg, transparent, #ddd6c8, transparent);
+    }
+
+    .quote{
+      margin: 20px 0;
+      padding: 14px 18px;
+      border-left: 4px solid var(--accent);
+      background: #fafafa;
+      border-radius: 0;
+      color:#1f2937;
+      font-size:16px;
+      line-height:1.72;
+    }
+
+    .chapter{
+      margin-top: 34px;
+      padding-top: 4px;
+    }
+
+    .chapter-title{
+      border-bottom:1px solid var(--line);
+      padding-bottom: 10px;
+      margin-bottom: 16px;
+    }
+
+    .chapter-title .num{
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform:uppercase;
+      letter-spacing:.2em;
+      font-size:11px;
+      color:var(--soft);
+      margin-bottom:8px;
+    }
+
+    .chapter-title h2{
+      margin:0;
+      font-size:26px;
+    }
+
+    .bullets{
+      margin: 18px 0;
+      padding: 0;
+    }
+
+    .note{
+      border-left: 4px solid #111827;
+      background:#fafafa;
+      padding: 14px 16px;
+      margin: 18px 0;
+      font-size: 15px;
+      color:#1f2937;
+    }
+
+    .closing{
+      margin-top: 32px;
+      padding-top: 18px;
+      border-top:1px solid var(--line);
+      font-size:15px;
+      color:var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .pagebreak{
+      page-break-before: always;
+      break-before: page;
+    }
+
+    @media print{
+      body{background:#fff;}
+      .page{padding:0; max-width:none;}
+      .sheet{border:0; box-shadow:none;}
+      .title-page{min-height:auto;}
+      .content{padding: 36px 44px 48px;}
+      .pagebreak{page-break-before:always; break-before:page;}
+    }
+
+    @media (max-width: 760px){
+      .content{padding: 28px 22px 36px;}
+      .title-page{padding: 38px 22px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="sheet">
+
+      <section class="title-page">
+        <div class="title-wrap">
+          <p class="eyebrow">Guía de inicio rápido 2026</p>
+          <h1>Ruta al Trabajo Remoto y Asistencia Virtual en EE. UU.</h1>
+          <p class="subtitle">Cómo pasar de las ofertas básicas a generar ingresos reales en dólares desde casa de forma legal y segura.</p>
+          <div class="meta">Edición digital</div>
+        </div>
+      </section>
+
+      <section class="content">
+
+        <div class="front-matter">
+          <div class="small">Aviso breve</div>
+          <p>Este material es una guía informativa. Los resultados dependen de tu experiencia, dedicación y de las oportunidades disponibles en cada momento.</p>
+        </div>
+
+        <div class="toc">
+          <h2>Índice</h2>
+          <ol>
+            <li>Introducción: la verdad sobre el trabajo desde casa</li>
+            <li>El trabajo remoto equivalente</li>
+            <li>Las plataformas reales para conseguir empleo</li>
+            <li>Preparando tu perfil ganador</li>
+            <li>Cómo cobrar tus ingresos de forma segura</li>
+            <li>Conclusión y primer paso</li>
+          </ol>
+        </div>
+
+        <section class="chapter pagebreak">
+          <div class="chapter-title">
+            <div class="num">Capítulo 1</div>
+            <h2>Introducción: la verdad sobre el trabajo desde casa</h2>
+          </div>
+
+          <p class="lead">Si estás leyendo esta guía, es muy probable que hayas visto anuncios o videos en redes sociales sobre empleos manuales desde casa, como armar cajas, empacar sobres o etiquetar productos para grandes empresas como Amazon.</p>
+
+          <p>Queremos comenzar con total honestidad: el negocio de armar cajas físicas en casa ya no existe en los Estados Unidos.</p>
+
+          <p>Debido a la automatización masiva, el uso de robots en centros de distribución y las estrictas regulaciones postales y de seguros, ninguna corporación legítima envía materiales físicos a hogares privados para ser ensamblados manualmente. Los videos que ves en internet que prometen esto suelen ser ganchos publicitarios o, en el peor de los casos, intermediarios que buscan capturar tus datos.</p>
+
+          <p>Pero aquí está la buena noticia: el deseo de trabajar desde la comodidad de tu hogar, manejar tu propio tiempo y generar ingresos estables en dólares sí es totalmente alcanzable. La diferencia es que el trabajo ya no es manual, sino digital.</p>
+
+          <div class="quote">
+            Las empresas ya no necesitan que empaques cajas físicas; necesitan que gestiones sus cajas virtuales: pedidos en línea, atención al cliente, correos electrónicos y bases de datos.
+          </div>
+
+          <p>En esta guía te mostraremos cómo dar el salto hacia el verdadero empleo remoto en Estados Unidos.</p>
+        </section>
+
+        <div class="rule"></div>
+
+        <section class="chapter pagebreak">
+          <div class="chapter-title">
+            <div class="num">Capítulo 2</div>
+            <h2>El trabajo remoto equivalente</h2>
+          </div>
+
+          <p>Si te llamaba la atención la idea de trabajar con tiendas en línea o logística, el mercado digital ofrece puestos de entrada que no requieren experiencia previa ni títulos universitarios, con salarios competitivos que suelen oscilar entre 15 y 25 dólares por hora.</p>
+
+          <h3>Roles más accesibles para comenzar</h3>
+          <ul class="bullets">
+            <li><strong>Asistente de logística virtual (E-commerce Support).</strong> Te encargas de revisar que los pedidos de una tienda en línea se procesen correctamente, actualizar inventarios en la computadora y coordinar con proveedores de envío.</li>
+            <li><strong>Representante de atención al cliente (chat o email).</strong> Responde dudas de los compradores a través de chats en vivo o correos electrónicos. No necesitas hablar por teléfono si prefieres el trabajo escrito.</li>
+            <li><strong>Moderador de contenido.</strong> Revisa que los comentarios, calificaciones o imágenes subidas por los usuarios cumplan con las normas de la empresa.</li>
+          </ul>
+        </section>
+
+        <div class="rule"></div>
+
+        <section class="chapter pagebreak">
+          <div class="chapter-title">
+            <div class="num">Capítulo 3</div>
+            <h2>Las plataformas reales para conseguir empleo</h2>
+          </div>
+
+          <p>Para evitar estafas, busca vacantes únicamente en canales oficiales y profesionales del mercado estadounidense. Evita grupos de Facebook o anuncios sospechosos en WhatsApp.</p>
+
+          <p>Las herramientas más útiles son:</p>
+
+          <ul class="bullets">
+            <li><strong>Indeed USA con filtro Remote.</strong> Es uno de los buscadores de empleo más grandes de Estados Unidos. Ingresa en Indeed, escribe el puesto deseado, como “Customer Service” o “Data Entry”, y coloca “Remote” en ubicación. También puedes añadir “Spanish” si buscas puestos bilingües.</li>
+            <li><strong>LinkedIn.</strong> Configura tu perfil profesional indicando que estás disponible para trabajo remoto. Muchas empresas contratan directamente a través de su sistema “Easy Apply”.</li>
+            <li><strong>Upwork y Fiverr.</strong> Si prefieres proyectos cortos o trabajo por horas en lugar de un empleo fijo, estas plataformas permiten ofrecer servicios de transcripción, traducción, entrada de datos o asistencia virtual, cobrando de forma segura dentro de la plataforma.</li>
+          </ul>
+
+          <div class="note">
+            Mantén siempre una regla simple: si una oferta promete dinero fácil, pago inmediato sin requisitos claros o te pide datos sensibles por fuera de la plataforma, desconfía.
+          </div>
+        </section>
+
+        <div class="rule"></div>
+
+        <section class="chapter pagebreak">
+          <div class="chapter-title">
+            <div class="num">Capítulo 4</div>
+            <h2>Preparando tu perfil ganador</h2>
+          </div>
+
+          <p>Las empresas estadounidenses usan software automatizado, conocido como ATS, para leer currículums antes de que lleguen a una persona. Si tu hoja de vida no está optimizada, puede ser rechazada automáticamente.</p>
+
+          <h3>Reglas de oro para tu currículum remoto</h3>
+          <ol>
+            <li><strong>Formato simple.</strong> Usa un diseño limpio en una sola página. No uses barras de habilidades en porcentajes ni gráficos complejos. El formato ideal de entrega debe ser PDF o Word.</li>
+            <li><strong>Enfoque en habilidades digitales.</strong> Incluye que sabes manejar herramientas básicas como Google Workspace, Microsoft Office, Zoom, Slack o herramientas de chat empresarial.</li>
+            <li><strong>Orientación a resultados.</strong> En lugar de escribir “Encargado de responder correos”, escribe algo como: “Gestión eficiente de más de 50 consultas diarias por correo electrónico, manteniendo un índice de satisfacción del cliente superior al 95%”.</li>
+          </ol>
+
+          <div class="quote">
+            Un currículum bien presentado no busca impresionar con adornos; busca facilitar la lectura y demostrar que sabes resolver tareas reales.
+          </div>
+        </section>
+
+        <div class="rule"></div>
+
+        <section class="chapter pagebreak">
+          <div class="chapter-title">
+            <div class="num">Capítulo 5</div>
+            <h2>Cómo cobrar tus ingresos de forma segura</h2>
+          </div>
+
+          <p>Una de las mayores dudas al iniciar en el mundo digital es cómo recibir pagos de forma legal y con bajas comisiones.</p>
+
+          <ul class="bullets">
+            <li><strong>Si resides dentro de EE. UU.</strong> El método estándar es el depósito directo a tu cuenta bancaria tradicional mediante el sistema ACH, o plataformas ampliamente aceptadas como PayPal o Venmo.</li>
+            <li><strong>Si eres trabajador internacional.</strong> Plataformas como Payoneer, Wise o Airtm permiten abrir balances o cuentas espejo en dólares dentro de Estados Unidos. La empresa puede depositar localmente y tú retirar esos fondos hacia tu moneda local o cuenta bancaria en tu país de residencia.</li>
+          </ul>
+
+          <div class="note">
+            Consejo práctico: verifica siempre comisiones, tiempos de retiro y compatibilidad con tu país antes de depender de una sola plataforma.
+          </div>
+        </section>
+
+        <div class="rule"></div>
+
+        <section class="chapter pagebreak">
+          <div class="chapter-title">
+            <div class="num">Capítulo 6</div>
+            <h2>Conclusión y primer paso</h2>
+          </div>
+
+          <p>El mercado del trabajo remoto sigue creciendo. Dejar atrás la idea de los trabajos manuales obsoletos y capacitarte en el entorno digital es un paso realista para cambiar tu situación financiera.</p>
+
+          <p>Tu plan de acción para hoy mismo:</p>
+
+          <ol>
+            <li>Limpia y actualiza tu currículum enfocándote en tus habilidades organizativas y digitales.</li>
+            <li>Regístrate en Indeed y crea una alerta de empleo con la palabra “Remote”.</li>
+            <li>Dedica al menos 30 minutos al día a aplicar de manera constante a un mínimo de 3 vacantes.</li>
+          </ol>
+
+          <div class="quote">
+            El éxito depende de tu consistencia. Empieza hoy mismo.
+          </div>
+
+          <div class="closing">
+            Fin de la guía. Preparada para exportarse como PDF y subirse como archivo descargable en Gumroad.
+          </div>
+        </section>
+
+      </section>
+    </div>
+  </div>
+</body>
+</html>
